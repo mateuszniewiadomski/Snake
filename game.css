@@ -1,0 +1,117 @@
+#game-board {
+    position: absolute;
+    background-color: rgb(36, 36, 36);
+    height: 80vh;
+    width: 80vh;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    grid-gap: 0px;
+    z-index: -3;
+}
+
+#game-board-border {
+    position: absolute;
+    height: 80vh;
+    width: 80vh;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    grid-gap: 0px;
+    z-index: -2;
+}
+
+.snake {
+    background-color: rgb(252, 134, 0);
+    box-shadow: 0 0 20vmin rgb(255, 210, 158);
+}
+
+.food {
+    background-color: rgb(251, 255, 0);
+    box-shadow: 0 0 5vmin white;
+}
+
+.border {
+    border: .1vmin solid rgb(0, 0, 0);
+    opacity: 0;
+}
+
+#menu {
+    width: 80vh;
+    height: 80vh;
+    position: absolute;
+}
+
+#start-menu {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+    color: white;  
+    font-size: 4vmin;
+    font-weight: 600;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    animation: zoomInAndOut 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zoomInAndOut {
+    0% { font-size: 4vmin; }
+    50% { font-size: 3.5vmin; }
+    100% { font-size: 4vmin; }
+}
+
+#end-menu, #high-score-menu {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    color: white;  
+    font-size: 4vmin;
+    font-weight: 600;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    animation: fadeIn 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+    0% { font-size: 6vmin; opacity: 0; }
+    100% { font-size: 4vmin; opacity: 1; }
+}
+
+#menu input[type=text] {
+    margin-top: 50%;    
+    margin-left: calc(50% - 140px);
+    border: 2px solid rgba(36, 36, 36, 0);
+    border-bottom-color: violet;
+    width: 25vmin;
+    padding: 10px;
+    background-color: rgba(36, 36, 36, 0);
+    outline: none;
+    color: white;
+}
+
+#menu input[type=text]:focus {
+    border: 2px solid violet;
+    box-shadow: 0 0 10vmin violet;
+}
+
+#menu input[type=text]:hover, #menu input[type=submit]:hover {
+    border: 2px solid violet;
+    box-shadow: 0 0 30vmin violet, 0 0 6vmin rgba(36, 36, 36, 0.8) inset;
+}
+
+#menu input[type=submit] {
+    margin-top: 50%;    
+    margin-left: 3vh;
+    border: 2px solid rgba(36, 36, 36, 0);
+    border-bottom-color: violet;
+    padding: 10px;
+    background-color: rgba(36, 36, 36, 0);
+    outline: none;
+    color: white;
+}
+
+#menu #restart {
+    margin-left: calc(50% - 40px);
+}
